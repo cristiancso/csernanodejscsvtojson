@@ -4,7 +4,7 @@ const csvFilePath = './customer-data.xls'
 
 async function convertcsvtojson(){
     const jsonArray = await csv().fromFile(csvFilePath);
-    fs.writeFile('customer-data.json', JSON.stringify(jsonArray), function (error) {
+    fs.writeFile('customer-data.json', JSON.stringify(jsonArray, null, 1), function (error) {
         if (error) return console.error(error)
         console.log('The json file has been created!')
     })
